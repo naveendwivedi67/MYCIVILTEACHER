@@ -3,13 +3,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consultancy Portfolio – Order Online</title>
-  <meta name="description" content="House plan, water projects, and structural/architectural consultancy. View portfolio, pricing, and place orders online for quick service." />
-  <meta property="og:title" content="Consultancy Portfolio – Order Online" />
+  <title>Naveen Dwivedi – Consultancy Portfolio</title>
+  <meta name="description" content="House plan, water projects, structural/architectural consultancy, contour line preparation, and survey work." />
+  <meta property="og:title" content="Naveen Dwivedi – Consultancy Portfolio" />
   <meta property="og:description" content="View services, portfolio, pricing, and order online." />
   <meta property="og:type" content="website" />
   <style>
-    /* --- Styles remain same as before --- */
+    :root {
+      --brand: #2563eb;
+      --dark: #0b1220;
+      --muted: #6b7280;
+      --bg: #0f172a;
+      --card: #111827;
+      --ring: rgba(37,99,235,0.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(37,99,235,0.15), transparent),
+                  radial-gradient(1200px 600px at 90% 10%, rgba(16,185,129,0.1), transparent),
+                  var(--bg);
+      color: #e5e7eb;
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(2,6,23,0.6);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+    .nav-wrap { max-width: 1100px; margin: 0 auto; display:flex; gap:20px; align-items:center; padding:12px 16px; }
+    .brand { font-weight: 800; letter-spacing: .2px; }
+    .spacer { flex:1 }
+    .nav a { color:#cbd5e1; text-decoration:none; padding:10px 12px; border-radius:10px; }
+    .nav a:hover { color:white; background: rgba(148,163,184,0.1) }
+    .cta { background: var(--brand); color:white !important; box-shadow: 0 10px 20px -10px var(--ring); }
+    section { padding: 64px 16px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 12px; }
+    h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 16px; }
+    p.lead { font-size: clamp(16px, 2.2vw, 18px); color:#cbd5e1; margin: 0 0 20px; }
+    .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; }
+    .hero-card { background: rgba(255,255,255,0.05); border:1px solid rgba(148,163,184,0.15); padding:24px; border-radius:24px; }
+    .pill { display:inline-flex; gap:8px; align-items:center; padding:6px 10px; background: rgba(37,99,235,0.15); color:#bfdbfe; border-radius:999px; font-size:12px; }
+    .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top: 12px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid rgba(148,163,184,0.2); color:#e5e7eb; text-decoration:none; }
+    .grid { display:grid; gap:16px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card { background: var(--card); border:1px solid rgba(148,163,184,0.15); border-radius:20px; padding:20px; }
+    .muted { color: var(--muted); }
+    .gallery { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+    .gallery img { width:100%; height:200px; object-fit:cover; border-radius:16px; }
+    .price { font-weight:800; font-size: 28px; }
+    .contact-split { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    iframe { width:100%; height: 520px; border: 0; background: #0b1220; border-radius: 16px; }
+    footer { padding: 28px 16px; border-top:1px solid rgba(148,163,184,0.15); color:#94a3b8; text-align:center; }
+    .fab { position: fixed; right: 16px; bottom: 16px; background: #22c55e; color:white; border-radius: 999px; padding:14px 16px; text-decoration:none; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .contact-split { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -28,65 +85,64 @@
     <div>
       <span class="pill">Fast • Transparent • Professional</span>
       <h1>House Plans, 3D Elevations & Water Project Design – Order Online</h1>
-      <p class="lead">Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer. Beohari, Shahdol (MP) se all-India online service. Portfolio dekhiye, package choose kijiye, aur turant <em>Order</em> kijiye.</p>
+      <p class="lead">Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer. Beohari, Shahdol (MP) se all-India online service.</p>
       <div class="btns">
         <a class="btn cta" href="#pricing">View Packages</a>
         <a class="btn" href="#portfolio">See Portfolio</a>
         <a class="btn" id="whBtn" href="#">WhatsApp Now</a>
       </div>
-      <p class="muted" style="margin-top:8px">GST/Invoice available • Delivery via Email/WhatsApp • Revisions included per package</p>
     </div>
     <div class="hero-card">
-      <h2 style="margin-top:0">Quick Order</h2>
-      <p class="muted">2 minute form bhariye. Main details check karke confirm karta/ti hoon.</p>
+      <h2>Quick Order</h2>
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform?embedded=true">Loading…</iframe>
-      <div class="btns">
-        <a class="btn cta" href="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform" target="_blank">Open Form Fullscreen</a>
-        <a class="btn" href="https://rzp.io/l/YOUR_PAYMENT_LINK" target="_blank">Pay Now (Advance)</a>
-      </div>
     </div>
   </section>
 
   <section id="services" class="container">
-    <!-- Same services content -->
+    <h2>Services</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>House Plan (2D)</h3><p class="muted">Vastu-aware layout, working drawings, schedules.</p></div>
+      <div class="card"><h3>3D Front Elevation</h3><p class="muted">Modern & budget-friendly façades.</p></div>
+      <div class="card"><h3>Water Supply / Hydraulic Design</h3><p class="muted">Network sizing, modeling, BOQs.</p></div>
+      <div class="card"><h3>Structure & Estimation</h3><p class="muted">Safe, economical structural designs.</p></div>
+      <div class="card"><h3>Contour Line Preparation</h3><p class="muted">Accurate contour maps from survey data.</p></div>
+      <div class="card"><h3>Survey Work</h3><p class="muted">On-site measurements and topographic surveys.</p></div>
+    </div>
   </section>
 
   <section id="portfolio" class="container">
-    <!-- Same portfolio content -->
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" alt="House Plan">
+      <img src="https://images.unsplash.com/photo-1599423300746-b62533397364" alt="3D Elevation">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Water Project">
+      <img src="https://images.unsplash.com/photo-1599423300742-b62533397365" alt="Structure Design">
+      <img src="https://images.unsplash.com/photo-1588854337221-4f3e4f63d35f" alt="Interior Design">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Estimation Work">
+    </div>
   </section>
 
   <section id="pricing" class="container">
-    <!-- Same pricing content -->
+    <h2>Pricing</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Starter</h3><p class="muted">Small Plot • 1 revision</p><div class="price">₹999–₹1,999</div></div>
+      <div class="card"><h3>Standard</h3><p class="muted">Typical House • 2–3 revisions</p><div class="price">₹2,999–₹5,999</div></div>
+      <div class="card"><h3>Pro</h3><p class="muted">Large projects & water design</p><div class="price">Custom</div></div>
+    </div>
   </section>
 
   <section id="contact" class="container">
     <h2>Contact & Order</h2>
     <div class="contact-split">
       <div class="card">
-        <h3>Call / WhatsApp</h3>
-        <p class="muted">Preferred: WhatsApp for drawings, photos, and quick replies.</p>
-        <p>
-          <a class="btn" href="tel:+917389831942">📞 Call: +91 7389831942</a>
-        </p>
-        <p>
-          <a class="btn" id="whBtn2" href="#">💬 WhatsApp Chat</a>
-        </p>
-        <p>
-          <a class="btn" href="mailto:NAVEENDWIVEDI67@GMAIL.COM">✉️ Email: NAVEENDWIVEDI67@GMAIL.COM</a>
-        </p>
-        <p class="muted">Address: Beohari, Shahdol, Madhya Pradesh (Service pan-India, online)</p>
-      </div>
-      <div class="card">
-        <h3>Order Form (Details)</h3>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform?embedded=true">Loading…</iframe>
-        <p style="margin-top:10px"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform" target="_blank">Open Fullscreen</a></p>
+        <a class="btn" href="tel:+917389831942">📞 Call: +91 7389831942</a>
+        <a class="btn" id="whBtn2" href="#">💬 WhatsApp Chat</a>
+        <a class="btn" href="mailto:NAVEENDWIVEDI67@GMAIL.COM">✉️ Email</a>
       </div>
     </div>
   </section>
 
-  <footer>
-    © <span id="year"></span> NAVEEN DWIVEDI • All rights reserved • <a style="color:#93c5fd" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</a>
-  </footer>
+  <footer>© <span id="year"></span> NAVEEN DWIVEDI • All rights reserved</footer>
 
   <a class="fab" id="whFab" href="#">WhatsApp Order</a>
 
@@ -94,12 +150,10 @@
     const YOUR_PHONE = '7389831942';
     const PREFILL = encodeURIComponent('Namaste! Mujhe house plan / water project ke liye order dena hai.');
     const WA_LINK = `https://wa.me/91${YOUR_PHONE}?text=${PREFILL}`;
-
     function setWA(el) { if (el) { el.href = WA_LINK; el.target = '_blank'; } }
     setWA(document.getElementById('whBtn'));
     setWA(document.getElementById('whBtn2'));
     setWA(document.getElementById('whFab'));
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
