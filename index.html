@@ -4,8 +4,79 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Naveen Dwivedi – Consultancy Portfolio</title>
-  <meta name="description" content="House plan, water projects, contour mapping, survey work, and structural/architectural consultancy." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="House plan, water projects, and structural/architectural consultancy. View portfolio, pricing, and place orders online for quick service." />
+  <meta property="og:title" content="Consultancy Portfolio – Order Online" />
+  <meta property="og:description" content="View services, portfolio, pricing, and order online." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --brand: #2563eb;
+      --dark: #0b1220;
+      --muted: #6b7280;
+      --bg: #0f172a;
+      --card: #111827;
+      --ring: rgba(37,99,235,0.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(37,99,235,0.15), transparent),
+                  radial-gradient(1200px 600px at 90% 10%, rgba(16,185,129,0.1), transparent),
+                  var(--bg);
+      color: #e5e7eb;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      line-height: 1.6;
+    }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(2,6,23,0.6);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+    .nav-wrap { max-width: 1100px; margin: 0 auto; display:flex; gap:20px; align-items:center; padding:12px 16px; }
+    .brand { font-weight: 800; letter-spacing: .2px; }
+    .spacer { flex:1 }
+    .nav a { color:#cbd5e1; text-decoration:none; padding:10px 12px; border-radius:10px; }
+    .nav a:hover { color:white; background: rgba(148,163,184,0.1) }
+    .cta { background: var(--brand); color:white !important; box-shadow: 0 10px 20px -10px var(--ring); }
+    .cta:hover { filter: brightness(1.05); }
+    section { padding: 64px 16px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 12px; }
+    h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 16px; }
+    p.lead { font-size: clamp(16px, 2.2vw, 18px); color:#cbd5e1; margin: 0 0 20px; }
+    .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border:1px solid rgba(148,163,184,0.15); padding:24px; border-radius:24px; }
+    .pill { display:inline-flex; gap:8px; align-items:center; padding:6px 10px; background: rgba(37,99,235,0.15); color:#bfdbfe; border:1px solid rgba(37,99,235,0.35); border-radius:999px; font-size:12px; }
+    .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top: 12px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid rgba(148,163,184,0.2); color:#e5e7eb; text-decoration:none; }
+    .btn:hover { background: rgba(148,163,184,0.1); }
+    .grid { display:grid; gap:16px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .card { background: var(--card); border:1px solid rgba(148,163,184,0.15); border-radius:20px; padding:20px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .muted { color: var(--muted); }
+    .gallery { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; }
+    .gallery img { width:100%; height:200px; object-fit:cover; border-radius:16px; border:1px solid rgba(148,163,184,0.15) }
+    .price { font-weight:800; font-size: 28px; }
+    .contact-split { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    iframe { width:100%; height: 520px; border: 0; background: #0b1220; border-radius: 16px; }
+    footer { padding: 28px 16px; border-top:1px solid rgba(148,163,184,0.15); color:#94a3b8; text-align:center; }
+    .fab {
+      position: fixed; right: 16px; bottom: 16px; z-index: 60;
+      background: #22c55e; color:white; border-radius: 999px; padding:14px 16px; text-decoration:none; box-shadow:0 12px 24px rgba(34,197,94,.3);
+      display:flex; align-items:center; gap:8px; font-weight:700;
+    }
+    .fab:hover { filter: brightness(1.05); }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .contact-split { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -22,8 +93,8 @@
   <section class="container hero">
     <div>
       <span class="pill">Fast • Transparent • Professional</span>
-      <h1>House Plans, 3D Elevations, Water Projects, Contour & Survey – Order Online</h1>
-      <p class="lead">Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer. Beohari, Shahdol (MP) se all-India online service. Portfolio dekhiye, package choose kijiye, aur turant <em>Order</em> kijiye.</p>
+      <h1>House Plans, 3D Elevations & Water Project Design – Order Online</h1>
+      <p class="lead">Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer. Beohari, Shahdol (MP) se all-India online service.</p>
       <div class="btns">
         <a class="btn cta" href="#pricing">View Packages</a>
         <a class="btn" href="#portfolio">See Portfolio</a>
@@ -39,30 +110,35 @@
   <section id="services" class="container">
     <h2>Services</h2>
     <div class="grid grid-3">
-      <div class="card"><h3>House Plan (2D)</h3><p class="muted">Vastu-aware layout, working drawings, schedules, area statements.</p></div>
-      <div class="card"><h3>3D Front Elevation</h3><p class="muted">Modern/classic façade with HD renders.</p></div>
-      <div class="card"><h3>Water Supply / Hydraulic Design</h3><p class="muted">WaterGEMS, HEC-HMS/RAS modeling, BOQs.</p></div>
-      <div class="card"><h3>Structure & Estimation</h3><p class="muted">Safe, economical design + quantity take-off.</p></div>
-      <div class="card"><h3>Contour Line Banana</h3><p class="muted">DEM data se contour map banwana.</p></div>
-      <div class="card"><h3>Survey Work</h3><p class="muted">Total Station/GPS survey, plot measurement.</p></div>
+      <div class="card"><h3>House Plan (2D)</h3></div>
+      <div class="card"><h3>3D Front Elevation</h3></div>
+      <div class="card"><h3>Water Supply / Hydraulic Design</h3></div>
+      <div class="card"><h3>Structure & Estimation</h3></div>
+      <div class="card"><h3>Site Visit / Consultation</h3></div>
+      <div class="card"><h3>Drawings & Files</h3></div>
+      <div class="card"><h3>Contour Line Banana</h3></div>
+      <div class="card"><h3>Survey Work</h3></div>
     </div>
   </section>
 
   <section id="portfolio" class="container">
     <h2>Portfolio</h2>
     <div class="gallery">
-      <img src="https://picsum.photos/id/1018/800/600" alt="Sample 1" />
-      <img src="https://picsum.photos/id/1025/800/600" alt="Sample 2" />
-      <img src="https://picsum.photos/id/1035/800/600" alt="Sample 3" />
+      <img src="https://picsum.photos/seed/a1/800/600">
+      <img src="https://picsum.photos/seed/a2/800/600">
+      <img src="https://picsum.photos/seed/a3/800/600">
+      <img src="https://picsum.photos/seed/a4/800/600">
+      <img src="https://picsum.photos/seed/a5/800/600">
+      <img src="https://picsum.photos/seed/a6/800/600">
     </div>
   </section>
 
   <section id="pricing" class="container">
     <h2>Pricing</h2>
     <div class="grid grid-3">
-      <div class="card"><h3>Starter</h3><p class="muted">₹999–₹1,999</p></div>
-      <div class="card"><h3>Standard</h3><p class="muted">₹2,999–₹5,999</p></div>
-      <div class="card"><h3>Pro / Project</h3><p class="muted">Custom Quote</p></div>
+      <div class="card"><h3>Starter</h3><div class="price">₹999–₹1,999</div></div>
+      <div class="card"><h3>Standard</h3><div class="price">₹2,999–₹5,999</div></div>
+      <div class="card"><h3>Pro / Project</h3><div class="price">Custom Quote</div></div>
     </div>
   </section>
 
@@ -77,15 +153,13 @@
     </div>
   </section>
 
-  <footer>
-    © <span id="year"></span> NAVEEN DWIVEDI
-  </footer>
-
+  <footer>© <span id="year"></span> NAVEEN DWIVEDI</footer>
   <a class="fab" id="whFab" href="#">WhatsApp Order</a>
 
   <script>
     const YOUR_PHONE = '7389831942';
-    const WA_LINK = `https://wa.me/91${YOUR_PHONE}?text=Namaste! Mujhe house plan / water project / contour / survey ke liye order dena hai.`;
+    const PREFILL = encodeURIComponent('Namaste! Mujhe house plan / water project ke liye order dena hai.');
+    const WA_LINK = `https://wa.me/91${YOUR_PHONE}?text=${PREFILL}`;
     function setWA(el) { if (el) { el.href = WA_LINK; el.target = '_blank'; } }
     setWA(document.getElementById('whBtn'));
     setWA(document.getElementById('whBtn2'));
