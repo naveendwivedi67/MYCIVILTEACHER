@@ -4,104 +4,183 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="ghKf7AZId2tXmTexuC6TTZ6cwU26KK8ByBxY9smiYUE" />
-  <title>Consultancy Portfolio – Order Online</title>
-  <meta name="description" content="House plan, water projects, and structural/architectural consultancy. View portfolio, pricing, and place orders online for quick service." />
-  <meta property="og:title" content="Consultancy Portfolio – Order Online" />
-  <meta property="og:description" content="View services, portfolio, pricing, and order online." />
+  <title>Naveen Dwivedi – Consultancy Portfolio</title>
+  <meta name="description" content="House plan, water projects, structural & architectural consultancy. View portfolio, pricing, and order online." />
+  <meta property="og:title" content="Naveen Dwivedi – Consultancy Portfolio" />
+  <meta property="og:description" content="House plan, water projects, structural & architectural consultancy." />
   <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* --- Styles remain same as before --- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    nav {
+      background: #2563eb;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    nav .brand {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 15px;
+    }
+    h1, h2 {
+      color: #2563eb;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card i {
+      font-size: 30px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #1e4ecf;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .fab {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: #25D366;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-wrap">
-      <div class="brand">NAVEEN DWIVEDI</div>
-      <div class="spacer"></div>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact" class="cta">Order / Contact</a>
-    </div>
-  </nav>
 
-  <section class="container hero">
-    <div>
-      <span class="pill">Fast • Transparent • Professional</span>
-      <h1>House Plans, 3D Elevations & Water Project Design – Order Online</h1>
-      <p class="lead">Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer. Beohari, Shahdol (MP) se all-India online service. Portfolio dekhiye, package choose kijiye, aur turant <em>Order</em> kijiye.</p>
-      <div class="btns">
-        <a class="btn cta" href="#pricing">View Packages</a>
-        <a class="btn" href="#portfolio">See Portfolio</a>
-        <a class="btn" id="whBtn" href="#">WhatsApp Now</a>
-      </div>
-      <p class="muted" style="margin-top:8px">GST/Invoice available • Delivery via Email/WhatsApp • Revisions included per package</p>
-    </div>
-    <div class="hero-card">
-      <h2 style="margin-top:0">Quick Order</h2>
-      <p class="muted">2 minute form bhariye. Main details check karke confirm karta/ti hoon.</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform?embedded=true">Loading…</iframe>
-      <div class="btns">
-        <a class="btn cta" href="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform" target="_blank">Open Form Fullscreen</a>
-        <a class="btn" href="https://rzp.io/l/YOUR_PAYMENT_LINK" target="_blank">Pay Now (Advance)</a>
-      </div>
-    </div>
-  </section>
+<nav>
+  <div class="brand">NAVEEN DWIVEDI</div>
+  <div>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <section id="services" class="container">
-    <!-- Same services content -->
-  </section>
+<section>
+  <h1>House Plans, 3D Elevations & Water Project Design – Order Online</h1>
+  <p>Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer, Beohari, Shahdol (MP) se all-India online service deta hoon. Portfolio dekhiye, package choose kijiye, aur turant Order kijiye.</p>
+  <a class="btn" href="#pricing">View Packages</a>
+  <a class="btn" href="#portfolio">See Portfolio</a>
+</section>
 
-  <section id="portfolio" class="container">
-    <!-- Same portfolio content -->
-  </section>
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid grid-3">
+    <div class="card"><i class="fa-solid fa-house"></i><h3>House Plan (2D)</h3><p>Vastu-aware layout, working drawings, area statements.</p></div>
+    <div class="card"><i class="fa-solid fa-city"></i><h3>3D Front Elevation</h3><p>Modern, classic or budget-friendly facade design.</p></div>
+    <div class="card"><i class="fa-solid fa-faucet"></i><h3>Water Supply / Hydraulic Design</h3><p>WaterGEMS network sizing, HEC-HMS/RAS modeling.</p></div>
+    <div class="card"><i class="fa-solid fa-drafting-compass"></i><h3>Structure & Estimation</h3><p>Safe, economical design with BOQs.</p></div>
+    <div class="card"><i class="fa-solid fa-map"></i><h3>Contour Line Banana</h3><p>Topographical survey & contour generation for projects.</p></div>
+    <div class="card"><i class="fa-solid fa-ruler-combined"></i><h3>Survey Work</h3><p>Total Station, GPS survey & site measurements.</p></div>
+  </div>
+</section>
 
-  <section id="pricing" class="container">
-    <!-- Same pricing content -->
-  </section>
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="gallery">
+    <img src="https://picsum.photos/id/1018/800/600" alt="Sample 1">
+    <img src="https://picsum.photos/id/1015/800/600" alt="Sample 2">
+    <img src="https://picsum.photos/id/1025/800/600" alt="Sample 3">
+    <img src="https://picsum.photos/id/1031/800/600" alt="Sample 4">
+    <img src="https://picsum.photos/id/1041/800/600" alt="Sample 5">
+    <img src="https://picsum.photos/id/1051/800/600" alt="Sample 6">
+  </div>
+</section>
 
-  <section id="contact" class="container">
-    <h2>Contact & Order</h2>
-    <div class="contact-split">
-      <div class="card">
-        <h3>Call / WhatsApp</h3>
-        <p class="muted">Preferred: WhatsApp for drawings, photos, and quick replies.</p>
-        <p>
-          <a class="btn" href="tel:+917389831942">📞 Call: +91 7389831942</a>
-        </p>
-        <p>
-          <a class="btn" id="whBtn2" href="#">💬 WhatsApp Chat</a>
-        </p>
-        <p>
-          <a class="btn" href="mailto:NAVEENDWIVEDI67@GMAIL.COM">✉️ Email: NAVEENDWIVEDI67@GMAIL.COM</a>
-        </p>
-        <p class="muted">Address: Beohari, Shahdol, Madhya Pradesh (Service pan-India, online)</p>
-      </div>
-      <div class="card">
-        <h3>Order Form (Details)</h3>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform?embedded=true">Loading…</iframe>
-        <p style="margin-top:10px"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform" target="_blank">Open Fullscreen</a></p>
-      </div>
-    </div>
-  </section>
+<section id="pricing">
+  <h2>Pricing</h2>
+  <div class="grid grid-3">
+    <div class="card"><h3>Starter</h3><p>Small plot • 1 revision</p><strong>₹999–₹1,999</strong></div>
+    <div class="card"><h3>Standard</h3><p>Typical house/shop • 2–3 revisions</p><strong>₹2,999–₹5,999</strong></div>
+    <div class="card"><h3>Pro / Project</h3><p>Bigger sites • Hydraulic design</p><strong>Custom Quote</strong></div>
+  </div>
+</section>
 
-  <footer>
-    © <span id="year"></span> NAVEEN DWIVEDI • All rights reserved • <a style="color:#93c5fd" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</a>
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <p><a class="btn" href="tel:+917389831942"><i class="fa-solid fa-phone"></i> Call: +91 7389831942</a></p>
+  <p><a class="btn" href="mailto:NAVEENDWIVEDI67@GMAIL.COM"><i class="fa-solid fa-envelope"></i> Email: NAVEENDWIVEDI67@GMAIL.COM</a></p>
+</section>
 
-  <a class="fab" id="whFab" href="#">WhatsApp Order</a>
+<footer>
+  © <span id="year"></span> NAVEEN DWIVEDI • All rights reserved
+</footer>
 
-  <script>
-    const YOUR_PHONE = '7389831942';
-    const PREFILL = encodeURIComponent('Namaste! Mujhe house plan / water project ke liye order dena hai.');
-    const WA_LINK = `https://wa.me/91${YOUR_PHONE}?text=${PREFILL}`;
+<a class="fab" href="https://wa.me/917389831942?text=Namaste!%20Mujhe%20house%20plan%20/%20water%20project%20order%20dena%20hai" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i> WhatsApp
+</a>
 
-    function setWA(el) { if (el) { el.href = WA_LINK; el.target = '_blank'; } }
-    setWA(document.getElementById('whBtn'));
-    setWA(document.getElementById('whBtn2'));
-    setWA(document.getElementById('whFab'));
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
