@@ -77,6 +77,29 @@
   .contact-form textarea {height:150px;}
   .contact-form button {background:#2874f0; color:white; border:none; padding:12px 30px; border-radius:5px; font-weight:bold; cursor:pointer; transition:background 0.3s;}
   .contact-form button:hover {background:#0b4da0;}
+  
+  /* Form Status Messages */
+  .form-status {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    display: none;
+  }
+  .success {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+  }
+  .error {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+  }
+  .loading {
+    background: #fff3cd;
+    color: #856404;
+    display: block;
+  }
 
   /* FAQ */
   .faq-container {max-width:800px; margin:40px auto 0;}
@@ -136,7 +159,7 @@
   <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1610191701530-091e4563f2e4?crop=entropy&cs=tinysrgb&fit=max&w=1500');"></div>
   <div class="hero-text">
     <h1>Professional Civil Engineering Services</h1>
-    <p>20+ years experience in house planning, elevation design, and water projects</p>
+    <p>5+ years experience in house planning, elevation design, and water projects</p>
     <div class="cta-buttons">
       <a href="https://wa.me/917389831942?text=Hello!%20I%20am%20interested%20in%20your%20services" class="primary-btn" target="_blank">Order via WhatsApp</a>
       <a href="#services" class="secondary-btn">View Services</a>
@@ -327,7 +350,7 @@
   </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section with Working Form -->
 <section id="contact">
   <h2>Contact Us</h2>
   <div class="contact-container">
@@ -338,11 +361,15 @@
       <p><img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" class="icon-location"> Based in Beohari, Shahdol, Madhya Pradesh</p>
       <p style="margin-top:20px;">Working Hours:<br>Monday-Saturday: 9AM to 6PM</p>
     </div>
-    <form class="contact-form" id="inquiryForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Phone Number">
-      <textarea placeholder="Your Project Details" required></textarea>
+    
+    <form class="contact-form" action="https://formspree.io/f/mvojnzqw" method="POST" id="inquiryForm">
+      <!-- Form Status Message -->
+      <div class="form-status" id="formStatus"></div>
+      
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Your Project Details" required></textarea>
       <button type="submit">Send Inquiry</button>
     </form>
   </div>
@@ -383,11 +410,42 @@
     });
   });
 
-  // Form submission
-  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+  // Form submission with Formspree
+  const form = document.getElementById('inquiryForm');
+  const formStatus = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert('Thank you for your inquiry! We will contact you soon.');
-    this.reset();
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    formStatus.textContent = 'Processing your inquiry...';
+    formStatus.className = 'form-status loading';
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        formStatus.textContent = 'Thank you! Your inquiry has been sent successfully. We will contact you soon.';
+        formStatus.className = 'form-status success';
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      formStatus.textContent = 'Oops! There was a problem sending your message. Please try again later or contact us directly via WhatsApp.';
+      formStatus.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Inquiry';
+    }
   });
 
   // Smooth scrolling for navigation
