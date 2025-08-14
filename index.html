@@ -1,170 +1,405 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Naveen Dwivedi – Consultancy Portfolio</title>
-  <meta name="description" content="House plan, water projects, and structural/architectural consultancy. View portfolio, pricing, and place orders online for quick service." />
-  <meta property="og:title" content="Consultancy Portfolio – Order Online" />
-  <meta property="og:description" content="View services, portfolio, pricing, and order online." />
-  <meta property="og:type" content="website" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAVEEN DWIVEDI ENGINEER - Civil Engineering Services</title>
+<style>
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {font-family: Arial, sans-serif; background:#f5f5f5; color:#333; scroll-behavior:smooth; line-height:1.6;}
 
-  <style>
-    :root {
-      --brand: #2563eb;
-      --dark: #0b1220;
-      --muted: #6b7280;
-      --bg: #0f172a;
-      --card: #111827;
-      --ring: rgba(37,99,235,0.35);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(37,99,235,0.15), transparent),
-                  radial-gradient(1200px 600px at 90% 10%, rgba(16,185,129,0.1), transparent),
-                  var(--bg);
-      color: #e5e7eb;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
-      line-height: 1.6;
-    }
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(8px);
-      background: rgba(2,6,23,0.6);
-      border-bottom: 1px solid rgba(148,163,184,0.15);
-    }
-    .nav-wrap { max-width: 1100px; margin: 0 auto; display:flex; gap:20px; align-items:center; padding:12px 16px; }
-    .brand { font-weight: 800; letter-spacing: .2px; }
-    .spacer { flex:1 }
-    .nav a { color:#cbd5e1; text-decoration:none; padding:10px 12px; border-radius:10px; }
-    .nav a:hover { color:white; background: rgba(148,163,184,0.1) }
-    .cta { background: var(--brand); color:white !important; box-shadow: 0 10px 20px -10px var(--ring); }
-    .cta:hover { filter: brightness(1.05); }
-    section { padding: 64px 16px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 12px; }
-    h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 16px; }
-    p.lead { font-size: clamp(16px, 2.2vw, 18px); color:#cbd5e1; margin: 0 0 20px; }
-    .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; }
-    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border:1px solid rgba(148,163,184,0.15); padding:24px; border-radius:24px; }
-    .pill { display:inline-flex; gap:8px; align-items:center; padding:6px 10px; background: rgba(37,99,235,0.15); color:#bfdbfe; border:1px solid rgba(37,99,235,0.35); border-radius:999px; font-size:12px; }
-    .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top: 12px; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid rgba(148,163,184,0.2); color:#e5e7eb; text-decoration:none; }
-    .btn:hover { background: rgba(148,163,184,0.1); }
-    .grid { display:grid; gap:16px; }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .card { background: var(--card); border:1px solid rgba(148,163,184,0.15); border-radius:20px; padding:20px; }
-    .card h3 { margin: 0 0 8px; font-size: 18px; }
-    .muted { color: var(--muted); }
-    .gallery { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; }
-    .gallery img { width:100%; height:200px; object-fit:cover; border-radius:16px; border:1px solid rgba(148,163,184,0.15) }
-    .price { font-weight:800; font-size: 28px; }
-    .contact-split { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-    iframe { width:100%; height: 520px; border: 0; background: #0b1220; border-radius: 16px; }
-    footer { padding: 28px 16px; border-top:1px solid rgba(148,163,184,0.15); color:#94a3b8; text-align:center; }
-    .fab {
-      position: fixed; right: 16px; bottom: 16px; z-index: 60;
-      background: #22c55e; color:white; border-radius: 999px; padding:14px 16px; text-decoration:none; box-shadow:0 12px 24px rgba(34,197,94,.3);
-      display:flex; align-items:center; gap:8px; font-weight:700;
-    }
-    .fab:hover { filter: brightness(1.05); }
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .gallery { grid-template-columns: 1fr 1fr; }
-      .contact-split { grid-template-columns: 1fr; }
-    }
-  </style>
+  /* Header */
+  header {background:#2874f0; color:white; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+  header .logo {font-size:26px; font-weight:bold; text-align:center;}
+  nav {display:flex; justify-content:center; gap:25px; margin-top:10px; flex-wrap:wrap;}
+  nav a {color:white; text-decoration:none; font-weight:bold; font-size:17px; padding:5px 10px; border-radius:5px; transition:background 0.3s;}
+  nav a:hover {text-decoration:none; background:rgba(255,255,255,0.2);}
+
+  /* Hero Slideshow */
+  .hero {position:relative; height:500px; overflow:hidden;}
+  .slide {position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity 1s ease-in-out;}
+  .slide.active {opacity:1;}
+  .hero-text {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; text-align:center; background:rgba(0,0,0,0.5); padding:30px; border-radius:10px; max-width:800px; width:90%;}
+  .hero-text h1 {font-size:36px; margin-bottom:15px; text-shadow:1px 1px 3px rgba(0,0,0,0.8);}
+  .hero-text p {font-size:20px; margin-bottom:25px; text-shadow:1px 1px 2px rgba(0,0,0,0.8);}
+  .cta-buttons {display:flex; gap:15px; justify-content:center; margin-top:20px; flex-wrap:wrap;}
+  .primary-btn {background:#25d366; color:white; padding:12px 25px; text-decoration:none; font-size:18px; border-radius:6px; font-weight:bold; transition:background 0.3s;}
+  .primary-btn:hover {background:#128c7e;}
+  .secondary-btn {background:transparent; color:white; border:2px solid white; padding:12px 25px; text-decoration:none; font-size:18px; border-radius:6px; font-weight:bold; transition:all 0.3s;}
+  .secondary-btn:hover {background:rgba(255,255,255,0.2);}
+
+  /* Sections */
+  section {padding:60px 20px; text-align:center;}
+  h2 {color:#2874f0; margin-bottom:30px; font-size:32px; position:relative;}
+  h2:after {content:''; display:block; width:80px; height:4px; background:#2874f0; margin:15px auto 0;}
+
+  /* Service Cards */
+  .services {display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;}
+  .card {background:white; border-radius:10px; width:280px; padding:25px 20px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; position:relative;}
+  .card:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+  .service-icon {width:60px; height:60px; margin:0 auto 15px; display:block;}
+  .card h3 {margin:15px 0 10px 0; font-size:22px; color:#2874f0;}
+  .card p {margin-bottom:15px; font-size:16px; color:#555;}
+  .features {text-align:left; margin-bottom:20px; padding-left:20px;}
+  .features li {margin-bottom:8px; font-size:15px;}
+  .price-badge {position:absolute; top:10px; right:10px; background:#ffe600; color:#2874f0; padding:5px 10px; font-weight:bold; border-radius:5px; font-size:14px;}
+  .order-btn {background:#2874f0; color:white; text-decoration:none; padding:10px 20px; border-radius:5px; display:inline-block; font-weight:bold; transition:background 0.3s;}
+  .order-btn:hover {background:#0b4da0;}
+
+  /* Portfolio Grid */
+  .portfolio {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:30px;}
+  .portfolio .card {width:100%; padding:0; overflow:hidden; cursor:pointer;}
+  .portfolio .card img {width:100%; height:200px; object-fit:cover; transition:transform 0.5s;}
+  .portfolio .card:hover img {transform:scale(1.1);}
+  .portfolio .card h3 {margin:15px 0; font-size:18px; padding:0 10px;}
+
+  /* Testimonials */
+  #testimonials {background:#f0f7ff;}
+  .testimonial-container {display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px;}
+  .testimonial {background:white; border-radius:10px; padding:25px; max-width:350px; box-shadow:0 5px 15px rgba(0,0,0,0.05); position:relative;}
+  .testimonial:before {content:'""'; font-size:60px; color:#2874f0; opacity:0.2; position:absolute; top:10px; left:20px;}
+  .testimonial p {font-style:italic; margin-bottom:15px; position:relative; z-index:1;}
+  .client {font-weight:bold; color:#2874f0;}
+
+  /* Process */
+  .process-steps {display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:40px;}
+  .step {text-align:center; max-width:200px;}
+  .step-number {background:#2874f0; color:white; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; font-weight:bold; font-size:20px;}
+
+  /* Contact */
+  .contact-container {display:flex; flex-wrap:wrap; justify-content:center; gap:50px; margin-top:40px; text-align:left;}
+  .contact-info {max-width:400px;}
+  .contact-info h3 {color:#2874f0; margin-bottom:20px; font-size:24px;}
+  .contact-info p {margin-bottom:15px; display:flex; align-items:center;}
+  .icon-phone, .icon-email, .icon-location {width:20px; margin-right:10px;}
+  .contact-form {max-width:500px; width:100%;}
+  .contact-form input, .contact-form textarea {width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px; font-family:Arial;}
+  .contact-form textarea {height:150px;}
+  .contact-form button {background:#2874f0; color:white; border:none; padding:12px 30px; border-radius:5px; font-weight:bold; cursor:pointer; transition:background 0.3s;}
+  .contact-form button:hover {background:#0b4da0;}
+
+  /* FAQ */
+  .faq-container {max-width:800px; margin:40px auto 0;}
+  .faq-item {margin-bottom:15px; background:white; border-radius:8px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.05);}
+  .faq-question {width:100%; text-align:left; padding:15px 20px; background:#f5f5f5; border:none; font-weight:bold; font-size:16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+  .faq-question:after {content:"+"; font-size:20px;}
+  .faq-question.active:after {content:"-";}
+  .faq-answer {padding:0 20px; max-height:0; overflow:hidden; transition:max-height 0.3s ease-out;}
+  .faq-answer p {padding:15px 0;}
+
+  /* Certifications */
+  .certifications {display:flex; justify-content:center; gap:30px; margin-top:40px; flex-wrap:wrap;}
+  .certifications img {height:80px; width:auto; opacity:0.8; transition:opacity 0.3s;}
+  .certifications img:hover {opacity:1;}
+
+  /* Footer */
+  footer {background:#2874f0; color:white; padding:30px 20px; text-align:center; font-size:16px;}
+  footer p {margin-bottom:10px;}
+  .social-links {display:flex; justify-content:center; gap:15px; margin-top:15px;}
+  .social-links a {color:white; font-size:20px;}
+
+  /* Lightbox */
+  .lightbox {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); display:none; justify-content:center; align-items:center; z-index:2000;}
+  .lightbox img {max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.5);}
+  .lightbox:target {display:flex;}
+
+  /* Responsive */
+  @media(max-width:768px){
+    .hero {height:400px;}
+    .hero-text h1 {font-size:28px;}
+    .hero-text p {font-size:18px;}
+    .cta-buttons {flex-direction:column; align-items:center;}
+    .contact-container {flex-direction:column; align-items:center; text-align:center;}
+    .contact-info p {justify-content:center;}
+  }
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-wrap">
-      <div class="brand">NAVEEN DWIVEDI</div>
-      <div class="spacer"></div>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact" class="cta">Order / Contact</a>
-    </div>
+
+<header>
+  <div class="logo">NAVEEN DWIVEDI ENGINEER</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <section class="container hero">
-    <div>
-      <span class="pill">Fast • Transparent • Professional</span>
-      <h1>House Plans, 3D Elevations & Water Project Design – Order Online</h1>
-      <p class="lead">Namaste! Main <strong>Naveen Dwivedi</strong> — Civil/Hydraulic Designer. Beohari, Shahdol (MP) se all-India online service.</p>
-      <div class="btns">
-        <a class="btn cta" href="#pricing">View Packages</a>
-        <a class="btn" href="#portfolio">See Portfolio</a>
-        <a class="btn" id="whBtn" href="#">WhatsApp Now</a>
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&w=1500');"></div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600566755015-4d93f671e3de?crop=entropy&cs=tinysrgb&fit=max&w=1500');"></div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1610191701530-091e4563f2e4?crop=entropy&cs=tinysrgb&fit=max&w=1500');"></div>
+  <div class="hero-text">
+    <h1>Professional Civil Engineering Services</h1>
+    <p>20+ years experience in house planning, elevation design, and water projects</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/917389831942?text=Hello!%20I%20am%20interested%20in%20your%20services" class="primary-btn" target="_blank">Order via WhatsApp</a>
+      <a href="#services" class="secondary-btn">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <span class="price-badge">₹5000</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1532/1532876.png" alt="House Plan" class="service-icon">
+      <h3>House Plan 2D/3D</h3>
+      <p>Complete architectural plans including floor plans, sections, and 3D visualization</p>
+      <ul class="features">
+        <li>Custom designs as per your needs</li>
+        <li>Vastu compliant options</li>
+        <li>Multiple revision cycles</li>
+      </ul>
+      <a href="https://wa.me/917389831942?text=I%20want%20to%20order%20House%20Plan%202D/3D%20service" class="order-btn" target="_blank">Order Now</a>
+    </div>
+    <div class="card">
+      <span class="price-badge">₹3000</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1532/1532919.png" alt="Elevation" class="service-icon">
+      <h3>Elevation Design</h3>
+      <p>Beautiful exterior designs to enhance your home's appearance</p>
+      <ul class="features">
+        <li>Modern and traditional styles</li>
+        <li>Material suggestions</li>
+        <li>3D visualization</li>
+      </ul>
+      <a href="https://wa.me/917389831942?text=I%20want%20to%20order%20Elevation%20Design%20service" class="order-btn" target="_blank">Order Now</a>
+    </div>
+    <div class="card">
+      <span class="price-badge">₹3500</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Contour Drawing" class="service-icon">
+      <h3>Contour Drawing</h3>
+      <p>Accurate topographic mapping for your construction site</p>
+      <ul class="features">
+        <li>Precise elevation points</li>
+        <li>Gradient analysis</li>
+        <li>Cut-fill calculations</li>
+      </ul>
+      <a href="https://wa.me/917389831942?text=I%20want%20to%20order%20Contour%20Drawing%20service" class="order-btn" target="_blank">Order Now</a>
+    </div>
+    <div class="card">
+      <span class="price-badge">₹4000</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Water Project" class="service-icon">
+      <h3>Water Projects</h3>
+      <p>Design and planning for water supply and drainage systems</p>
+      <ul class="features">
+        <li>Pipeline design</li>
+        <li>Storage solutions</li>
+        <li>Rainwater harvesting</li>
+      </ul>
+      <a href="https://wa.me/917389831942?text=I%20want%20to%20order%20Water%20Project%20service" class="order-btn" target="_blank">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <h2>Our Portfolio</h2>
+  <div class="portfolio">
+    <a href="#house-plan-1" class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="House Plan">
+      <h3>Modern Bungalow Design</h3>
+    </a>
+    <a href="#elevation-1" class="card">
+      <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Elevation">
+      <h3>Contemporary Elevation</h3>
+    </a>
+    <a href="#water-project-1" class="card">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Water Project">
+      <h3>Village Water Supply</h3>
+    </a>
+    <a href="#house-plan-2" class="card">
+      <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="House Plan">
+      <h3>Duplex House Design</h3>
+    </a>
+  </div>
+  
+  <!-- Lightbox elements -->
+  <div id="house-plan-1" class="lightbox">
+    <a href="#portfolio" class="close-btn">&times;</a>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Modern Bungalow Design">
+  </div>
+  <div id="elevation-1" class="lightbox">
+    <a href="#portfolio" class="close-btn">&times;</a>
+    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Contemporary Elevation">
+  </div>
+  <div id="water-project-1" class="lightbox">
+    <a href="#portfolio" class="close-btn">&times;</a>
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Village Water Supply">
+  </div>
+  <div id="house-plan-2" class="lightbox">
+    <a href="#portfolio" class="close-btn">&times;</a>
+    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Duplex House Design">
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <h2>Client Testimonials</h2>
+  <div class="testimonial-container">
+    <div class="testimonial">
+      <p>"Naveen designed our dream house perfectly, understanding all our requirements and providing excellent suggestions. The 3D visualization helped us see exactly how it would look."</p>
+      <div class="client">- Ramesh Sharma, Lucknow</div>
+    </div>
+    <div class="testimonial">
+      <p>"The water project design for our village was executed flawlessly. Naveen's team understood our budget constraints and delivered an efficient solution."</p>
+      <div class="client">- Priya Singh, Varanasi</div>
+    </div>
+    <div class="testimonial">
+      <p>"I highly recommend Naveen for elevation designs. They transformed our ordinary house into a beautiful home with their creative suggestions."</p>
+      <div class="client">- Amit Patel, Kanpur</div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section id="process">
+  <h2>Our Working Process</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Requirement Gathering</h3>
+      <p>We discuss your needs, preferences and site details</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Concept Design</h3>
+      <p>Initial sketches and ideas for your approval</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Detailed Design</h3>
+      <p>Complete technical drawings and plans</p>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>Final Delivery</h3>
+      <p>All documents and support for implementation</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">How long does a house plan take to complete?</button>
+      <div class="faq-answer">
+        <p>Typically 7-10 days for initial designs depending on complexity. Final plans with all details may take 2-3 weeks including revision cycles.</p>
       </div>
     </div>
-    <div class="hero-card">
-      <h2>Quick Order</h2>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePLACE_YOUR_GOOGLE_FORM_ID/viewform?embedded=true">Loading…</iframe>
-    </div>
-  </section>
-
-  <section id="services" class="container">
-    <h2>Services</h2>
-    <div class="grid grid-3">
-      <div class="card"><h3>House Plan (2D)</h3></div>
-      <div class="card"><h3>3D Front Elevation</h3></div>
-      <div class="card"><h3>Water Supply / Hydraulic Design</h3></div>
-      <div class="card"><h3>Structure & Estimation</h3></div>
-      <div class="card"><h3>Site Visit / Consultation</h3></div>
-      <div class="card"><h3>Drawings & Files</h3></div>
-      <div class="card"><h3>Contour Line Banana</h3></div>
-      <div class="card"><h3>Survey Work</h3></div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="container">
-    <h2>Portfolio</h2>
-    <div class="gallery">
-      <img src="https://picsum.photos/seed/a1/800/600">
-      <img src="https://picsum.photos/seed/a2/800/600">
-      <img src="https://picsum.photos/seed/a3/800/600">
-      <img src="https://picsum.photos/seed/a4/800/600">
-      <img src="https://picsum.photos/seed/a5/800/600">
-      <img src="https://picsum.photos/seed/a6/800/600">
-    </div>
-  </section>
-
-  <section id="pricing" class="container">
-    <h2>Pricing</h2>
-    <div class="grid grid-3">
-      <div class="card"><h3>Starter</h3><div class="price">₹999–₹1,999</div></div>
-      <div class="card"><h3>Standard</h3><div class="price">₹2,999–₹5,999</div></div>
-      <div class="card"><h3>Pro / Project</h3><div class="price">Custom Quote</div></div>
-    </div>
-  </section>
-
-  <section id="contact" class="container">
-    <h2>Contact & Order</h2>
-    <div class="contact-split">
-      <div class="card">
-        <p><a class="btn" href="tel:+917389831942">📞 Call: +91 7389831942</a></p>
-        <p><a class="btn" id="whBtn2" href="#">💬 WhatsApp Chat</a></p>
-        <p><a class="btn" href="mailto:NAVEENDWIVEDI67@GMAIL.COM">✉️ Email</a></p>
+    <div class="faq-item">
+      <button class="faq-question">Do you provide site visits?</button>
+      <div class="faq-answer">
+        <p>Yes, we can arrange site visits for projects within Madhya Pradesh. For distant locations, we work with local surveyors and use digital tools for remote collaboration.</p>
       </div>
     </div>
-  </section>
+    <div class="faq-item">
+      <button class="faq-question">What information do you need to start a project?</button>
+      <div class="faq-answer">
+        <p>We need your basic requirements, site dimensions, any existing structures, preferred styles, and budget. The more details you can provide, the better we can tailor the design.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Do you handle government approval processes?</button>
+      <div class="faq-answer">
+        <p>We prepare all necessary documents for approvals and can guide you through the process, but actual submission and follow-up is typically handled by the client or local agents.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>© <span id="year"></span> NAVEEN DWIVEDI</footer>
-  <a class="fab" id="whFab" href="#">WhatsApp Order</a>
+<!-- Certifications -->
+<section>
+  <h2>Our Certifications</h2>
+  <div class="certifications">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Autodesk_logo.svg/1200px-Autodesk_logo.svg.png" alt="Autodesk Certified">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/ISO_9001.svg/1200px-ISO_9001.svg.png" alt="ISO Certified">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Indian_Institution_of_Engineers_logo.svg/1200px-Indian_Institution_of_Engineers_logo.svg.png" alt="IIE Member">
+  </div>
+</section>
 
-  <script>
-    const YOUR_PHONE = '7389831942';
-    const PREFILL = encodeURIComponent('Namaste! Mujhe house plan / water project ke liye order dena hai.');
-    const WA_LINK = `https://wa.me/91${YOUR_PHONE}?text=${PREFILL}`;
-    function setWA(el) { if (el) { el.href = WA_LINK; el.target = '_blank'; } }
-    setWA(document.getElementById('whBtn'));
-    setWA(document.getElementById('whBtn2'));
-    setWA(document.getElementById('whFab'));
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" class="icon-phone"> +91 7389831942</p>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="icon-email"> naveendwivedi67@gmail.com</p>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" class="icon-location"> Based in Beohari, Shahdol, Madhya Pradesh</p>
+      <p style="margin-top:20px;">Working Hours:<br>Monday-Saturday: 9AM to 6PM</p>
+    </div>
+    <form class="contact-form" id="inquiryForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Phone Number">
+      <textarea placeholder="Your Project Details" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 NAVEEN DWIVEDI ENGINEER | All Rights Reserved</p>
+  <p>Professional Civil Engineering Services</p>
+  <div class="social-links">
+    <a href="#"><span>FB</span></a>
+    <a href="#"><span>IG</span></a>
+    <a href="#"><span>LI</span></a>
+    <a href="https://wa.me/917389831942" target="_blank"><span>WA</span></a>
+  </div>
+</footer>
+
+<script>
+  // Hero slideshow
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000);
+
+  // FAQ functionality
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      question.classList.toggle('active');
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Form submission
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your inquiry! We will contact you soon.');
+    this.reset();
+  });
+
+  // Smooth scrolling for navigation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
