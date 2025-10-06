@@ -114,6 +114,20 @@
   .certifications {display:flex; justify-content:center; gap:30px; margin-top:40px; flex-wrap:wrap;}
   .certifications img {height:80px; width:auto; opacity:0.8; transition:opacity 0.3s;}
   .certifications img:hover {opacity:1;}
+  
+  /* Udyam Certificate specific styling */
+  .udyam-certificate {
+    max-width: 300px;
+    height: auto;
+    border: 2px solid #2874f0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .udyam-certificate:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 
   /* Footer */
   footer {background:#2874f0; color:white; padding:30px 20px; text-align:center; font-size:16px;}
@@ -134,6 +148,15 @@
     .cta-buttons {flex-direction:column; align-items:center;}
     .contact-container {flex-direction:column; align-items:center; text-align:center;}
     .contact-info p {justify-content:center;}
+    .certifications {gap:20px;}
+    .certifications img {height:60px;}
+    .udyam-certificate {max-width: 250px;}
+  }
+  
+  @media(max-width:480px){
+    .certifications {gap:15px;}
+    .certifications img {height:50px;}
+    .udyam-certificate {max-width: 200px;}
   }
 </style>
 </head>
@@ -340,13 +363,15 @@
   </div>
 </section>
 
-<!-- Certifications -->
+<!-- Certifications Section -->
 <section>
   <h2>Our Certifications</h2>
   <div class="certifications">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Autodesk_logo.svg/1200px-Autodesk_logo.svg.png" alt="Autodesk Certified">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/ISO_9001.svg/1200px-ISO_9001.svg.png" alt="ISO Certified">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Indian_Institution_of_Engineers_logo.svg/1200px-Indian_Institution_of_Engineers_logo.svg.png" alt="IIE Member">
+    <!-- Add Udyam Registration Certificate -->
+    <img src="Screenshot 2025-10-06 181841.png" alt="Udyam Registration Certificate" class="udyam-certificate" title="Udyam Registration Certificate - Government of India">
   </div>
 </section>
 
