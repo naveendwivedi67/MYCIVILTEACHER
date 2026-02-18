@@ -8,9 +8,23 @@
     <meta name="description" content="Naveen Dwivedi Engineer – Professional Civil Engineering & Land Surveying in Beohari. 2D/3D House Plans, Vastu Design, Water Projects, 3D Elevation. Call now!">
     <meta name="keywords" content="Civil Engineer Beohari, Surveyor Beohari, House Plan Beohari, Vastu Design, 3D Elevation, Naveen Dwivedi, land survey Beohari, construction estimator">
     <meta name="author" content="Naveen Dwivedi">
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Naveen Dwivedi Engineer | Civil & Surveying Services Beohari">
+    <meta property="og:description" content="Professional Civil Engineering & Land Surveying in Beohari. Get 2D/3D House Plans, Vastu Design, and more.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581094794329-c8112c89af12?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
     <style>
         /* ---------- ROOT & RESET ---------- */
         * {
@@ -158,6 +172,34 @@
             color: var(--accent);
         }
 
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            flex-direction: column;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .mobile-menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
         /* ---------- HERO SLIDER ---------- */
         .hero {
             position: relative;
@@ -210,7 +252,9 @@
         .hero-text h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            color: var(--accent);
+            background: linear-gradient(45deg, var(--accent), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
             line-height: 1.2;
             letter-spacing: -0.5px;
@@ -251,6 +295,27 @@
             box-shadow: 0 18px 28px rgba(37,211,102,0.45);
         }
 
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.25s;
+            border: 2px solid white;
+            font-size: 1rem;
+            margin-left: 15px;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+
         /* ---------- STATS PARALLAX ---------- */
         .stats-container {
             background: linear-gradient(rgba(15,76,129,0.92), rgba(7,45,71,0.95)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80');
@@ -271,13 +336,12 @@
             text-align: center;
         }
 
-        .stat-item h2 {
+        .stat-item h3 {
             color: var(--accent);
             font-size: 3rem;
             margin-bottom: 5px;
             font-weight: 800;
         }
-        .stat-item h2:after { display: none; }
         .stat-item p {
             font-size: 1.2rem;
             font-weight: 400;
@@ -303,7 +367,7 @@
         }
 
         .service-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-12px) scale(1.02);
             border-bottom: 5px solid var(--primary);
             box-shadow: 0 25px 45px rgba(15,76,129,0.12);
         }
@@ -395,6 +459,13 @@
             box-shadow: 0 20px 35px rgba(15,76,129,0.08);
         }
 
+        .testimonial-card i.fa-quote-left {
+            color: var(--accent);
+            font-size: 2rem;
+            opacity: 0.4;
+            margin-bottom: 15px;
+        }
+
         .client-info {
             display: flex;
             align-items: center;
@@ -407,6 +478,17 @@
             height: 58px;
             border-radius: 50%;
             border: 3px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .client-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .client-info p {
+            color: #6f8a9c;
+            font-size: 0.9rem;
         }
 
         /* ---------- CONTACT & FOOTER ---------- */
@@ -444,12 +526,89 @@
             font-size: 1.6rem;
         }
 
+        .contact-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-dark);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            border: 1.5px solid #e0e9f2;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.2s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(15,76,129,0.08);
+        }
+
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
         footer {
             background: #0a2a3b;
             color: #ccdeec;
             padding: 32px;
             text-align: center;
             font-size: 1rem;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #ccdeec;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+            display: inline-block;
         }
 
         /* ---------- WHATSAPP FLOAT ---------- */
@@ -471,6 +630,7 @@
             font-size: 1.1rem;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
         }
 
         .whatsapp-float i {
@@ -479,290 +639,372 @@
 
         .whatsapp-float:hover {
             background: #20b859;
-            transform: scale(1.06);
+            transform: scale(1.06) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37,211,102,0.6);
         }
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 900px) {
             nav { display: none; }
+            .mobile-menu-icon { display: block; }
             .hero-text h1 { font-size: 2.4rem; }
             .hero-tagline { font-size: 1.2rem; }
             h2 { font-size: 1.9rem; }
+            section { padding: 60px 20px; }
         }
 
         @media (max-width: 550px) {
-            .hero-text h1 { font-size: 1.9rem; }
+            .hero-text h1 { font-size: 1.8rem; }
+            .hero-tagline { font-size: 1rem; }
+            .primary-btn { padding: 14px 25px; font-size: 0.95rem; }
+            .secondary-btn { padding: 12px 20px; margin-left: 0; margin-top: 15px; }
+            .hero { height: 500px; }
+            .whatsapp-float { padding: 12px 20px; font-size: 0.9rem; bottom: 20px; right: 20px; }
+            .contact-details { padding: 30px; }
+            .contact-item { font-size: 1rem; padding: 10px 18px; }
             .stats-grid { gap: 20px; }
-            .whatsapp-float span { display: none; }
-            .whatsapp-float { padding: 18px; border-radius: 50px; }
-            .logo-text span:first-child { font-size: 1.2rem; }
         }
 
-        /* mobile menu fallback */
-        .mobile-menu-icon {
-            display: none;
-            font-size: 28px;
-            color: white;
-        }
-        @media (max-width: 900px) {
-            .mobile-menu-icon {
-                display: block;
-                cursor: pointer;
-            }
+        @media (max-width: 400px) {
+            .header-container { padding: 0 15px; }
+            .logo-text span:first-child { font-size: 1.2rem; }
+            .hero-text h1 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
-
-<!-- STICKY HEADER -->
-<header>
-    <div class="header-container">
-        <div class="logo">
-            <i class="fas fa-drafting-compass"></i>
-            <div class="logo-text">
-                <span>NAVEEN DWIVEDI</span>
-                <span class="logo-subtitle">ENGINEER & SURVEYOR</span>
+    <!-- Sticky Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-drafting-compass"></i>
+                <div class="logo-text">
+                    <span>NAVEEN DWIVEDI</span>
+                    <span class="logo-subtitle">ENGINEER & SURVEYOR</span>
+                </div>
             </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#estimator">Cost Estimator</a>
+                <a href="#testimonials">Clients</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <i class="fas fa-bars mobile-menu-icon" onclick="toggleMobileMenu()"></i>
         </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#calculator">Estimator</a>
-            <a href="#testimonials">Reviews</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="mobile-menu-icon" onclick="alert('For navigation, please use contact button →')">☰</div>
-    </div>
-</header>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home" onclick="toggleMobileMenu()">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()">Services</a>
+            <a href="#estimator" onclick="toggleMobileMenu()">Cost Estimator</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()">Clients</a>
+            <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </header>
 
-<!-- HERO SECTION WITH SLIDER -->
-<section id="home" class="hero">
-    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112c89af12?auto=format&fit=crop&w=1600&q=80');" aria-label="Construction site"></div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80');" aria-label="Architect blueprint"></div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1600&q=80');" aria-label="Survey equipment"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-        <h1>🏡 Best Civil & Surveying Services in Beohari</h1>
-        <div class="hero-tagline">2D/3D Plans • Vastu Expert • Land Surveying • Water Projects</div>
-        <a href="https://wa.me/917389831942" class="primary-btn"><i class="fab fa-whatsapp"></i> Get Free Quote</a>
-    </div>
-</section>
-
-<!-- STATS COUNTER SECTION -->
-<div class="stats-container">
-    <div class="stats-grid">
-        <div class="stat-item"><h2>550+</h2><p>Projects Completed</p></div>
-        <div class="stat-item"><h2>180+</h2><p>Vastu Plans</p></div>
-        <div class="stat-item"><h2>12+</h2><p>Years Experience</p></div>
-        <div class="stat-item"><h2>100%</h2><p>Client Satisfaction</p></div>
-    </div>
-</div>
-
-<!-- SERVICES SECTION -->
-<section id="services">
-    <h2 style="display: block; text-align: center;">Our Expertise</h2>
-    <p class="section-subtitle">Precision, trust & innovation — delivered since 2014</p>
-    <div class="grid">
-        <div class="service-card">
-            <i class="fas fa-home"></i>
-            <h3>House Planning</h3>
-            <p>Vastu-compliant 2D & 3D floor plans, elevation designs. Starting ₹1000 per plan. Modern & traditional styles.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-ruler-combined"></i>
-            <h3>Land Surveying</h3>
-            <p>Auto-level, total station surveys. Boundary marking, topographical, road alignment. Highest accuracy.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-building"></i>
-            <h3>3D Elevation</h3>
-            <p>Luxury front elevation, 3D walkthrough, realistic renders. Boost your home’s curb appeal.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-water"></i>
-            <h3>Water Projects</h3>
-            <p>Rainwater harvesting, borewell solutions, drainage & irrigation planning. Sustainable design.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-draw-polygon"></i>
-            <h3>Vastu Design</h3>
-            <p>Scientific Vastu for plots & buildings. Positive energy flow, expert advice.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-trowel"></i>
-            <h3>Construction Consult.</h3>
-            <p>End-to-end project supervision, material estimation, quality control.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CONSTRUCTION COST CALCULATOR -->
-<section id="calculator" style="background: #f2f8fd;">
-    <div class="container">
-        <h2 style="display: block; text-align: center;">📐 Construction Cost Estimator</h2>
-        <p class="section-subtitle">Approximate budget for your residential project</p>
-        <div class="calc-box">
+    <!-- Hero Slider -->
+    <section id="home" class="hero">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112c89af12?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>NAVEEN DWIVEDI</h1>
+            <div class="hero-tagline">Civil Engineer & Land Surveyor | Beohari</div>
             <div>
-                <label><i class="fas fa-vector-square" style="margin-right: 8px; color:var(--primary);"></i>Plot Area (sq. ft.)</label>
-                <input type="number" id="area" placeholder="e.g., 1200 sq.ft" min="100" step="1">
+                <a href="https://wa.me/917389831942?text=Hello%20Naveen%20Ji%2C%20I%20need%20civil%20engineering%20services%20in%20Beohari." class="primary-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                <a href="#contact" class="secondary-btn"><i class="fas fa-phone-alt"></i> Call Now</a>
             </div>
-            <div>
-                <label><i class="fas fa-star" style="margin-right: 8px; color:var(--primary);"></i>Construction Quality</label>
-                <select id="quality">
-                    <option value="1500">Standard (budget-friendly, good finish)</option>
-                    <option value="1900">Premium (branded fittings, marble)</option>
-                    <option value="2500">Luxury (high-end, designer, Vastu)</option>
-                </select>
+        </div>
+    </header>
+    </section>
+
+    <!-- Statistics / Achievements Parallax -->
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>250+</h3>
+                <p>Projects Completed</p>
             </div>
-            <button onclick="calculateCost()" class="primary-btn" style="width: 100%; justify-content: center; background: var(--primary); box-shadow: 0 12px 22px rgba(15,76,129,0.4);">
-                <i class="fas fa-calculator"></i> Calculate Now
-            </button>
+            <div class="stat-item">
+                <h3>180+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>12+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Plots Surveyed</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="section-subtitle">Professional civil engineering & surveying solutions in Beohari</div>
+            <div class="grid">
+                <div class="service-card">
+                    <i class="fas fa-draw-polygon"></i>
+                    <h3>Land Surveying</h3>
+                    <p>Accurate boundary surveys, topographical mapping, and land measurement using modern DGPS & total station.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>2D/3D House Plans</h3>
+                    <p>Detailed floor plans with elevation, furniture layout, and photorealistic 3D views for your dream home.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-om"></i>
+                    <h3>Vastu Designs</h3>
+                    <p>Vastu-compliant residential & commercial plans with proper orientation and energy flow.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Water Projects</h3>
+                    <p>Tube well installation, pipeline design, water tank positioning, and irrigation planning.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>3D Elevation</h3>
+                    <p>Modern facade designs, 3D elevation renders, and architectural visualization.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Estimation & Costing</h3>
+                    <p>Detailed BOQ, material quantity takeoff, and budget estimation for construction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Estimator Tool -->
+    <section id="estimator" style="background: #f4f9ff;">
+        <div class="container">
+            <h2>Construction Cost Estimator</h2>
+            <div class="section-subtitle">Get instant approximate budget for your project in Beohari</div>
+            <div class="calc-box">
+                <form id="estimateForm">
+                    <label for="area"><i class="fas fa-arrows-alt"></i> Built-up Area (sq.ft.)</label>
+                    <input type="number" id="area" placeholder="e.g., 1500" required>
+
+                    <label for="type"><i class="fas fa-layer-group"></i> Construction Type</label>
+                    <select id="type" required>
+                        <option value="">Select type</option>
+                        <option value="basic">Basic (Economical finishes)</option>
+                        <option value="standard" selected>Standard (Medium quality)</option>
+                        <option value="premium">Premium (High-end)</option>
+                    </select>
+
+                    <label for="floors"><i class="fas fa-building"></i> Number of Floors</label>
+                    <select id="floors" required>
+                        <option value="1">1 Floor</option>
+                        <option value="2">2 Floors</option>
+                        <option value="3">3 Floors</option>
+                    </select>
+
+                    <button type="button" class="primary-btn" onclick="calculateEstimate()" style="width:100%; justify-content:center;">
+                        <i class="fas fa-calculator"></i> Calculate Estimate
+                    </button>
+                </form>
+
+                <div class="calc-result" id="result">
+                    <p>Estimated Construction Cost:</p>
+                    <span id="total-price">₹ 0</span>
+                    <p style="font-size:0.9rem; margin-top:10px;">*Approximate for material & labour (Beohari rates)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Clients Say</h2>
+            <div class="section-subtitle">Trusted by homeowners & builders in Beohari</div>
+            <div class="grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Naveen ji did an excellent job surveying my plot in Beohari. Very accurate measurements and quick work. Highly recommended!"</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        <div>
+                            <h4>Ramesh Patel</h4>
+                            <p>Homeowner, Beohari</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Got my 3D house plan and elevation done. The design was beautiful and Vastu-compliant. Great service at reasonable price."</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        <div>
+                            <h4>Priya Mishra</h4>
+                            <p>Architect, Beohari</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Professional approach and deep knowledge of local construction practices. Helped us save money on material estimation."</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
+                        <div>
+                            <h4>Suresh Yadav</h4>
+                            <p>Builder, Beohari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Naveen Dwivedi</h2>
+            <div class="section-subtitle">Civil Engineer & Surveyor - Beohari (M.P.)</div>
             
-            <div id="result" class="calc-result">
-                <h4 style="color: var(--dark); display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> Estimated Construction Cost</h4>
-                <span id="total-price">₹0</span>
-                <p style="font-size: 0.9rem; margin-top: 12px; color: #3e5a6a;"><i class="fas fa-info-circle"></i> *Rough estimate – includes material & basic labor. Final cost depends on site, soil & market rates.</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+917389831942">+91 7389831942</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Beohari, District Shahdol, M.P.</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:naveen.engineer@beohari.com">naveen.engineer@beohari.com</a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form id="contactForm" onsubmit="submitForm(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- TESTIMONIALS / REVIEWS -->
-<section id="testimonials">
-    <h2 style="display: block; text-align: center;">Client Love ❤️</h2>
-    <p class="section-subtitle">What Beohari says about Naveen Dwivedi</p>
-    <div class="grid">
-        <div class="testimonial-card">
-            <i class="fas fa-quote-left" style="color: var(--primary); font-size: 2rem; opacity: 0.25; margin-bottom: 8px;"></i>
-            <p style="font-size: 1.15rem; font-style: italic;">"Naveen sir designed our 3BHK Vastu home. Perfect ventilation and energy flow. Very cooperative!"</p>
-            <div class="client-info">
-                <img src="https://ui-avatars.com/api/?name=R+Singh&background=0f4c81&color=fff&size=58" alt="R Singh">
-                <div><h4 style="font-size:1.2rem;">Rajesh Singh</h4><span style="color: #436580;">Homeowner, Beohari</span></div>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Naveen Dwivedi Engineer | All Rights Reserved | Civil & Surveying Services Beohari</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
-        <div class="testimonial-card">
-            <i class="fas fa-quote-left" style="color: var(--primary); font-size: 2rem; opacity: 0.25; margin-bottom: 8px;"></i>
-            <p style="font-size: 1.15rem; font-style: italic;">"Land survey done for 5 acre colony. Precise markers and quick reporting. Highly recommend."</p>
-            <div class="client-info">
-                <img src="https://ui-avatars.com/api/?name=A+Gupta&background=2874f0&color=fff&size=58" alt="A Gupta">
-                <div><h4 style="font-size:1.2rem;">Amit Gupta</h4><span style="color: #436580;">Colony Developer</span></div>
-            </div>
-        </div>
-        <div class="testimonial-card">
-            <i class="fas fa-quote-left" style="color: var(--primary); font-size: 2rem; opacity: 0.25; margin-bottom: 8px;"></i>
-            <p style="font-size: 1.15rem; font-style: italic;">"3D elevation for our shop front — outstanding work! Many customers stopped by to appreciate."</p>
-            <div class="client-info">
-                <img src="https://ui-avatars.com/api/?name=P+Jain&background=ffd966&color=1e2a41&size=58" alt="P Jain">
-                <div><h4 style="font-size:1.2rem;">Priya Jain</h4><span style="color: #436580;">Business owner</span></div>
-            </div>
-        </div>
-    </div>
-</section>
+        <p style="font-size:0.85rem; margin-top:15px;">📍 Near Bus Stand, Beohari - 484774</p>
+    </footer>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
-    <h2 style="display: block; text-align: center;">📲 Connect With Engineer</h2>
-    <div class="contact-details">
-        <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 73898 31942</div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> naveendwivedi67@gmail.com</div>
-        <div class="contact-item"><i class="fas fa-map-pin"></i> Beohari, M.P. 484774</div>
-        <div class="contact-item"><i class="fab fa-whatsapp"></i> WhatsApp available</div>
-    </div>
-    <p style="text-align: center; margin-top: 35px; font-size: 1.2rem;">⭐ Free site visit & consultation within 10km</p>
-</section>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917389831942?text=Hello%20Naveen%20Ji%2C%20I%20need%20civil%20engineering%20services%20in%20Beohari." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat on WhatsApp</span>
+    </a>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 NAVEEN DWIVEDI (BE Civil) – Licensed Engineer & Surveyor. All rights reserved.</p>
-    <p style="margin-top: 12px; opacity: 0.8;"><i class="fas fa-tools"></i> Making Beohari smarter, one blueprint at a time.</p>
-</footer>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobileMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
 
-<!-- FIXED WHATSAPP CONVERSATION BUTTON -->
-<a href="https://wa.me/917389831942?text=Hello%20Naveen%20Sir,%20I%20need%20civil%20engineering%20consultation%20in%20Beohari." class="whatsapp-float" target="_blank">
-    <span>Chat with Engineer</span>
-    <i class="fab fa-whatsapp"></i>
-</a>
+        // Hero slider
+        let slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
 
-<!-- JAVASCRIPT: SLIDER + CALCULATOR -->
-<script>
-    // ========== HERO SLIDER ==========
-    let slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    if (slides.length > 0) {
-        setInterval(() => {
+        function nextSlide() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }, 5000);
-    }
-
-    // ========== CONSTRUCTION COST CALCULATOR ==========
-    function calculateCost() {
-        const areaInput = document.getElementById('area');
-        const qualitySelect = document.getElementById('quality');
-        const resultDiv = document.getElementById('result');
-        const totalSpan = document.getElementById('total-price');
-        
-        const area = parseFloat(areaInput.value);
-        const quality = parseFloat(qualitySelect.value);
-
-        if (!area || area <= 0) {
-            alert('🏗️ Please enter a valid plot area in square feet.');
-            return;
         }
 
-        // base estimate includes per sqft rate * area
-        let estimatedCost = area * quality;
-        // Additional contingency ~5% (good practice)
-        estimatedCost = estimatedCost * 1.05;
-        
-        // Format as Indian currency
-        const formatted = '₹ ' + estimatedCost.toLocaleString('en-IN', { maximumFractionDigits: 0 });
-        totalSpan.innerText = formatted;
-        resultDiv.style.display = 'block';
+        setInterval(nextSlide, 5000);
 
-        // smooth scroll to result
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+        // Cost estimator calculation
+        function calculateEstimate() {
+            let area = document.getElementById('area').value;
+            let type = document.getElementById('type').value;
+            let floors = document.getElementById('floors').value;
+            
+            if (!area || area < 100) {
+                alert('Please enter a valid area (minimum 100 sq.ft.)');
+                return;
+            }
 
-    // Auto-hide result initially if fields empty
-    window.onload = function() {
-        // Make slider work instantly
-        console.log('Naveen Dwivedi Engineer - Professional site ready');
-        // minor: if any input empty, result hidden
-        document.getElementById('result').style.display = 'none';
-    };
+            // Base rates per sq.ft. for Beohari (approximate)
+            let ratePerSqft = {
+                'basic': 1400,
+                'standard': 1800,
+                'premium': 2500
+            };
 
-    // Optional: allow enter key on area field
-    document.getElementById('area').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            calculateCost();
+            let baseRate = ratePerSqft[type] || 1800;
+            let totalArea = area * parseInt(floors);
+            let estimatedCost = totalArea * baseRate;
+            
+            // Format currency
+            let formatter = new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            });
+
+            document.getElementById('total-price').textContent = formatter.format(estimatedCost);
+            document.getElementById('result').style.display = 'block';
         }
-    });
-</script>
 
-<!-- ADDITIONAL LOCAL BUSINESS SCHEMA (invisible) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Naveen Dwivedi Engineer & Surveyor",
-  "image": "https://images.unsplash.com/photo-1581094794329-c8112c89af12?auto=format&fit=crop&w=1200&q=80",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Beohari",
-    "addressRegion": "Madhya Pradesh",
-    "postalCode": "484774",
-    "addressCountry": "IN"
-  },
-  "telephone": "+917389831942",
-  "email": "naveendwivedi67@gmail.com",
-  "priceRange": "₹₹",
-  "description": "Civil Engineering, Land Surveying, Vastu Plans, 3D Elevation in Beohari",
-  "sameAs": "https://wa.me/917389831942",
-  "areaServed": "Beohari and surrounding"
-}
-</script>
+        // Contact form submission
+        function submitForm(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us! We will get back to you soon.');
+            document.getElementById('contactForm').reset();
+        }
 
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').style.display = 'none';
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header shrink on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '5px 0';
+            } else {
+                header.style.padding = '8px 0';
+            }
+        });
+    </script>
 </body>
 </html>
